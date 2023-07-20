@@ -6,7 +6,7 @@ import { Loader } from '@/common/components/loader'
 import { APP_PATHS } from '@/common/constants'
 import { Error404Page } from '@/common/pages'
 import { PageContainer } from '@/common/styles/common-styled-components'
-import { PostsPage } from '@/modules/posts'
+import { PostsPage } from '@/modules/posts-table'
 
 export const AppRouter = () => {
   return (

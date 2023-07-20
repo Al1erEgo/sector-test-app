@@ -31,6 +31,8 @@ export const appSlice = createSlice({
       (state, action) => {
         if (isAxiosError(action.error)) {
           state.error = action.error.message
+        } else {
+          state.error = 'Что-то пошло не так :('
         }
       }
     )
