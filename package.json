@@ -19,9 +19,12 @@
     "@it-incubator/prettier-config": "^0.1.2",
     "@it-incubator/stylelint-config": "^0.1.5",
     "@reduxjs/toolkit": "^1.8.1",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.1",
+    "react-router-dom": "^6.14.0",
+    "styled-components": "6.0.0-rc.3",
     "stylelint": "^15.10.2"
   },
   "devDependencies": {
@@ -31,6 +34,7 @@
     "@testing-library/user-event": "^14.2.5",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.0.0",
