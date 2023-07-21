@@ -6,11 +6,17 @@ export const TableRow = styled.div`
   width: 100%;
 `
 
-export const TableRowItem = styled.div<{ end?: string }>`
+export const TableRowItem = styled.div<{ justifycontent?: string; end?: string }>`
+  min-height: 50px;
+
   display: flex;
   align-items: center;
-  padding: 16px;
+  justify-content: ${props => props.justifycontent || 'start'};
+  padding: 10px;
+
+  font-size: 0.9rem;
   font-weight: 500;
+
   border-left: solid 1px;
   border-bottom: solid 1px;
   border-right: ${props => (props.end ? 'solid 1px' : '')};
