@@ -1,3 +1,5 @@
+import { FullParentContainer } from '@/common'
+
 export const Loader = () => {
-  return <div>Загрузка...</div>
+  return <FullParentContainer>Загрузка...</FullParentContainer>
 }

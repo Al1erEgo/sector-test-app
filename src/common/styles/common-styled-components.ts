@@ -40,3 +40,13 @@ export const PageContentContainer = styled.div`
   overflow: auto;
   position: relative;
 `
+
+export const FullParentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 100%;
+  min-width: 100%;
+`
