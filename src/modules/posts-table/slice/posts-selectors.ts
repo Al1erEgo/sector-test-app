@@ -1,86 +1,34 @@
-// import { PostEntityType } from '../types'
 import { createSelector } from '@reduxjs/toolkit'
 
 import { RootState } from '@/app/store'
-import { selectSearching } from '@/common/slices'
-// import {
-//   getFilteredByFavourite,
-//   getFilteredByTitle,
-//   getFilteredByUserId,
-//   getSortedItems,
-//   selectFavouritePostsIds,
-//   selectFilterByFavourite,
-//   selectFilterByTitle,
-//   selectFilterByUserId,
-//   selectSorting,
-//   selectUsers,
-// } from '@/common'
-
-// const selectId = (state: RootState, id: number) => id
+import { selectSearching, selectSorting } from '@/common/slices'
 
 export const selectPosts = (state: RootState) => state.posts
 
 export const selectPostsWSearchSort = createSelector(
-  [selectSearching, selectPosts],
-  (search, posts) =>
-    posts.filter(
+  [selectSearching, selectSorting, selectPosts],
+  (search, sort, posts) => {
+    let completedPosts
+
+    completedPosts = posts.filter(
       post =>
         post.id.toString().includes(search) ||
         post.title.includes(search) ||
         post.body.includes(search)
     )
-)
+    if (sort.includes('id')) {
+      sort.includes('asc') && completedPosts.sort((a, b) => a.id - b.id)
+      sort.includes('desc') && completedPosts.sort((a, b) => b.id - a.id)
+    }
+    if (sort.includes('title')) {
+      sort.includes('asc') && completedPosts.sort((a, b) => (a.title > b.title ? 1 : -1))
+      sort.includes('desc') && completedPosts.sort((a, b) => (b.title > a.title ? 1 : -1))
+    }
+    if (sort.includes('body')) {
+      sort.includes('asc') && completedPosts.sort((a, b) => (a.body > b.body ? 1 : -1))
+      sort.includes('desc') && completedPosts.sort((a, b) => (b.body > a.body ? 1 : -1))
+    }
 
-// export const selectSelectedPosts = (state: RootState) => state.posts.selectedPosts
-//
-// export const selectIsPostFavourite = createSelector(
-//   [selectFavouritePostsIds, selectId],
-//   (favouritePosts, postId) => favouritePosts[postId]
-// )
-//
-// export const selectIsPostSelected = createSelector(
-//   [selectSelectedPosts, selectId],
-//   (selectedPosts, postId) => selectedPosts[postId]
-// )
-//
-// //проблема с доступом к selectUsers селектору
-// //export const selectUserByPost = createSelector([selectUsers, selectId], (users, userId) => users[userId])
-// export const selectUserByPost = (state: RootState, userId: number) => {
-//   const users = selectUsers(state)
-//
-//   return users[userId]
-// }
-//
-// const selectFilteredPosts = (state: RootState) => {
-//   const posts = selectPosts(state)
-//   const titleFilter = selectFilterByTitle(state)
-//   const userIdFilter = selectFilterByUserId(state)
-//   const favouriteFilter = selectFilterByFavourite(state)
-//   const favouritePostIds = selectFavouritePostsIds(state)
-//
-//   let filteredPosts: PostEntityType[] | undefined = posts
-//
-//   if (titleFilter) {
-//     filteredPosts = getFilteredByTitle(filteredPosts, titleFilter) as PostEntityType[]
-//   }
-//
-//   if (userIdFilter && userIdFilter.length > 0) {
-//     filteredPosts = getFilteredByUserId(filteredPosts, userIdFilter) as PostEntityType[]
-//   }
-//
-//   if (favouriteFilter !== undefined) {
-//     filteredPosts = getFilteredByFavourite(
-//       filteredPosts,
-//       favouriteFilter,
-//       favouritePostIds
-//     ) as PostEntityType[]
-//   }
-//
-//   return filteredPosts
-// }
-//
-// export const selectSortedPosts = createSelector(
-//   [selectFilteredPosts, selectSorting, selectFavouritePostsIds, selectUsers],
-//   (posts, sorting, favouritePostsIds, users) =>
-//     getSortedItems(posts, sorting, favouritePostsIds, users)
-// )
+    return completedPosts
+  }
+)
