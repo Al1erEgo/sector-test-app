@@ -10,17 +10,17 @@ export const StyledSearchInput = styled.input`
   border: none;
   border-radius: 0;
   width: 50vw;
-  height: 4vh;
+  height: 50px;
 
   color: #b2b7bf;
   background-color: #5a5c66;
   display: inline-flex;
-  padding-left: 10px;
+  padding-left: 20px;
   align-items: center;
 
   &::placeholder {
     color: #b2b7bf;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   &:focus {
@@ -29,8 +29,8 @@ export const StyledSearchInput = styled.input`
 `
 
 export const StyledSearchButton = styled.button`
-  width: 4vh;
-  height: 4vh;
+  width: 50px;
+  height: 50px;
   appearance: none;
   border: none;
   background-color: #5a5c66;

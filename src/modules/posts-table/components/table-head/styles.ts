@@ -13,8 +13,9 @@ export const TableHeadItem = styled.div`
   min-height: 50px;
   align-items: center;
   padding: 10px;
+  padding-left: 20%;
   font-weight: 500;
-  gap: 10px;
+  gap: 20px;
 
   cursor: pointer;
 `

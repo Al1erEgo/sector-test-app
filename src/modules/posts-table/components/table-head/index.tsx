@@ -30,16 +30,15 @@ export const TableHead: FC<TableHeadProps> = ({ columns, currentSortDirection })
     <TableHeadRow>
       {columns &&
         columns.map((item, index) => (
-          <TableHeadItem key={index}>
-            <span
-              onClick={() =>
-                item.sorter(getNewSortingDirection(currentSortDirection, item.dataIndex))
-              }
-            >
-              {item.title}
-            </span>
-            {currentSortDirection === `asc${item.dataIndex}` && <span>∨</span>}
-            {currentSortDirection === `desc${item.dataIndex}` && <span>∧</span>}
+          <TableHeadItem
+            key={index}
+            onClick={() =>
+              item.sorter(getNewSortingDirection(currentSortDirection, item.dataIndex))
+            }
+          >
+            <span>{item.title}</span>
+            {currentSortDirection === `asc${item.dataIndex}` && <span>∧</span>}
+            {currentSortDirection === `desc${item.dataIndex}` && <span>∨</span>}
           </TableHeadItem>
         ))}
     </TableHeadRow>
