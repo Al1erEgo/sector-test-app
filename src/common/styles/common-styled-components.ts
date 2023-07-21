@@ -28,9 +28,9 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
-  height: calc(100% - 50px);
-  max-height: calc(100% - 50px);
+  width: 90%;
+  height: 100%;
+  max-height: 100%;
 `
 
 export const PageContentContainer = styled.div`
@@ -39,5 +39,4 @@ export const PageContentContainer = styled.div`
   min-height: 200px;
   overflow: auto;
   position: relative;
-  margin-top: 7px;
 `

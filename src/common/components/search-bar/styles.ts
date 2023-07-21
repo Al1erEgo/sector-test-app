@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 export const SearchBarContainer = styled.div`
   display: flex;
   align-items: end;
+  margin-bottom: 10px;
 `
 
 export const StyledSearchInput = styled.input`

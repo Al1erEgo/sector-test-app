@@ -6,9 +6,13 @@ export const TableRow = styled.div`
   width: 100%;
 `
 
-export const TableRowItem = styled.div`
+export const TableRowItem = styled.div<{ end?: string }>`
   display: flex;
   align-items: center;
   padding: 16px;
   font-weight: 500;
+  border-left: solid 1px;
+  border-bottom: solid 1px;
+  border-right: ${props => (props.end ? 'solid 1px' : '')};
+  border-color: #e3e6ec;
 `

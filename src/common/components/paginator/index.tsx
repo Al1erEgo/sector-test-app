@@ -37,7 +37,9 @@ export const Paginator: FC<PaginatorProps> = ({ totalCount, currentPage, handleC
       >
         Назад
       </StyledPaginationButton>
-      <FlexContainer gap={'5px'}>{getButtonsForPages()}</FlexContainer>
+      <FlexContainer gap={'5px'} width={'70%'}>
+        {getButtonsForPages()}
+      </FlexContainer>
       <StyledPaginationButton
         onClick={() => handleChange(currentPage + 1)}
         disabled={totalCount - currentPage * 10 < 1}

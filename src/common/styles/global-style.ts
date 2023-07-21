@@ -20,5 +20,8 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     height: 100%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `

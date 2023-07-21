@@ -12,7 +12,7 @@ export const TableBody: FC<TableBodyProps> = ({ rows }) => {
           <TableRow key={row.id}>
             <TableRowItem>{row.id}</TableRowItem>
             <TableRowItem>{row.title}</TableRowItem>
-            <TableRowItem>{row.body}</TableRowItem>
+            <TableRowItem end={'end'}>{row.body}</TableRowItem>
           </TableRow>
         ))}
     </>

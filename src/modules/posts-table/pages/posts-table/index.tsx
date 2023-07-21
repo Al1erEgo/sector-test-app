@@ -25,15 +25,15 @@ const PostsTablePage = () => {
   return (
     <>
       <SearchBar />
+      <TableHead />
       <PageContentContainer>
-        <TableHead />
         <TableBody rows={currentPageContent} />
-        <Paginator
-          currentPage={currentPage}
-          totalCount={posts.length}
-          handleChange={setCurrentPage}
-        />
       </PageContentContainer>
+      <Paginator
+        currentPage={currentPage}
+        totalCount={posts.length}
+        handleChange={setCurrentPage}
+      />
     </>
   )
 }
