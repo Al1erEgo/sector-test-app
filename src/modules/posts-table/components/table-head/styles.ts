@@ -14,4 +14,7 @@ export const TableHeadItem = styled.div`
   align-items: center;
   padding: 10px;
   font-weight: 500;
+  gap: 10px;
+
+  cursor: pointer;
 `
