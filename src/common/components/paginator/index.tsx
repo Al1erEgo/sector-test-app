@@ -37,7 +37,7 @@ export const Paginator: FC<PaginatorProps> = ({ totalCount, currentPage, handleC
       >
         Назад
       </StyledPaginationButton>
-      <FlexContainer gap={'5px'} width={'80%'}>
+      <FlexContainer gap={'5px'} width={'80%'} flexdirection={'row'}>
         {getButtonsForPages()}
       </FlexContainer>
       <StyledPaginationButton

@@ -2,13 +2,16 @@ import { styled } from 'styled-components'
 
 export const TableHeadRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr 4fr;
+  grid-template-columns: 1fr 5fr 4fr;
   width: 100%;
   background-color: #474955;
   color: #e6e7ea;
 `
 
 export const TableHeadItem = styled.div`
-  padding: 16px;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  padding: 10px;
   font-weight: 500;
 `

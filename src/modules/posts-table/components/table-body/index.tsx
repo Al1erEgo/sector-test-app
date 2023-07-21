@@ -8,7 +8,7 @@ const getTableContent = (rows: PostType[]) => {
 
   for (let i = 0; i < 10; i++) {
     tableContent.push(
-      <TableRow key={rows[i]?.id}>
+      <TableRow key={i}>
         <TableRowItem justifycontent={'center'}>{rows[i]?.id}</TableRowItem>
         <TableRowItem>{rows[i]?.title}</TableRowItem>
         <TableRowItem end={'end'}>{rows[i]?.body}</TableRowItem>
